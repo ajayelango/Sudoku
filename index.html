@@ -1,255 +1,240 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Sudoku App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background: #f7f9fc;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        h1 {
-            text-align: center;
-        }
-        p {
-            margin: 10px 0;
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #777;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b18">
+  <meta name="description" content="Sudoku — a beautiful, intelligent Sudoku experience for Android. Play 6×6 and 9×9 puzzles, build streaks, improve your accuracy and sharpen your logic.">
+  <title>Sudoku — Train Your Mind. Master the Grid.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070812;
+      --bg2:#0c1020;
+      --text:#f7f8ff;
+      --muted:#a8aec5;
+      --line:rgba(255,255,255,.10);
+      --pink:#ff3f81;
+      --blue:#3478ff;
+      --cyan:#45d9ff;
+      --violet:#7c5cff;
+      --card:rgba(255,255,255,.055);
+      --shadow:0 28px 90px rgba(0,0,0,.45);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;color:var(--text);background:
+      radial-gradient(circle at 12% 8%,rgba(124,92,255,.20),transparent 28rem),
+      radial-gradient(circle at 88% 15%,rgba(255,63,129,.16),transparent 26rem),
+      linear-gradient(180deg,#070812 0%,#0a0d19 52%,#070812 100%);
+      font-family:Inter,system-ui,sans-serif;line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .nav{
+      position:fixed;z-index:50;top:0;left:0;right:0;
+      background:rgba(7,8,18,.66);backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.07)
+    }
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.03em;font-size:20px}
+    .brand-mark{
+      width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--pink),var(--violet),var(--blue));
+      box-shadow:0 8px 25px rgba(124,92,255,.35);font-size:20px
+    }
+    .links{display:flex;gap:30px;color:#c9cde0;font-size:14px;font-weight:600}
+    .links a:hover{color:white}
+    .nav-cta,.primary{
+      background:linear-gradient(135deg,#ff4b88,#ff286f);
+      box-shadow:0 12px 30px rgba(255,63,129,.25);
+      padding:12px 19px;border-radius:999px;font-weight:700;font-size:14px
+    }
+    .hero{padding:150px 0 90px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--line);
+      border-radius:999px;background:rgba(255,255,255,.045);color:#d9dcf0;font-size:12px;font-weight:700;
+      text-transform:uppercase;letter-spacing:.11em
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:#5cffb0;box-shadow:0 0 14px #5cffb0}
+    h1{
+      font-family:"Space Grotesk",Inter,sans-serif;font-size:clamp(52px,7vw,88px);
+      line-height:.96;letter-spacing:-.065em;margin:22px 0 24px;max-width:750px
+    }
+    .gradient-text{background:linear-gradient(100deg,#fff 15%,#ff75a7 48%,#7b8cff 92%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-copy{font-size:19px;color:var(--muted);max-width:620px}
+    .actions{display:flex;gap:14px;align-items:center;margin-top:34px;flex-wrap:wrap}
+    .secondary{padding:12px 19px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);font-weight:700;font-size:14px}
+    .secondary:hover{background:rgba(255,255,255,.09)}
+    .trust{display:flex;gap:25px;margin-top:32px;color:#8e94ae;font-size:12px}
+    .phone-wrap{position:relative;display:flex;justify-content:center}
+    .glow{
+      position:absolute;width:390px;height:390px;border-radius:50%;filter:blur(70px);
+      background:linear-gradient(135deg,rgba(255,63,129,.42),rgba(70,112,255,.38));z-index:-1
+    }
+    .phone{
+      width:min(390px,78vw);padding:8px;border-radius:45px;background:linear-gradient(145deg,#303445,#090a10 28%,#222531);
+      box-shadow:0 45px 100px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.14);
+      transform:rotate(2.2deg);transition:transform .5s ease
+    }
+    .phone:hover{transform:rotate(0deg) translateY(-8px)}
+    .phone img{width:100%;display:block;border-radius:38px}
+    .floating{
+      position:absolute;bottom:38px;left:-22px;padding:14px 18px;border:1px solid var(--line);
+      border-radius:18px;background:rgba(13,16,31,.86);backdrop-filter:blur(15px);box-shadow:var(--shadow)
+    }
+    .floating strong{display:block;font-size:18px}.floating span{font-size:11px;color:var(--muted)}
+    section{padding:105px 0}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 55px}
+    .kicker{color:#ff6d9f;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:800}
+    h2{font-family:"Space Grotesk";font-size:clamp(36px,5vw,58px);line-height:1.03;letter-spacing:-.05em;margin:10px 0 16px}
+    .section-head p{color:var(--muted);font-size:17px}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{
+      padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+      transition:.3s;min-height:235px
+    }
+    .feature:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.18);box-shadow:var(--shadow)}
+    .icon{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:rgba(255,255,255,.08);font-size:24px;margin-bottom:22px}
+    .feature h3{margin:0 0 8px;font-size:20px}.feature p{margin:0;color:var(--muted);font-size:14px}
+    .showcase{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+    .showcase-copy p{color:var(--muted);font-size:17px}
+    .checklist{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:13px}
+    .checklist li{display:flex;gap:11px;align-items:flex-start;color:#d9dced;font-weight:600}
+    .check{width:22px;height:22px;flex:0 0 22px;border-radius:50%;display:grid;place-items:center;background:rgba(92,255,176,.13);color:#5cffb0;font-size:12px;margin-top:2px}
+    .screen-card{padding:12px;border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.03));border:1px solid var(--line);box-shadow:var(--shadow)}
+    .screen-card img{display:block;width:100%;border-radius:25px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:25px;background:rgba(255,255,255,.035);overflow:hidden}
+    .stat{padding:28px;text-align:center;border-right:1px solid var(--line)}.stat:last-child{border:0}
+    .stat strong{display:block;font-family:"Space Grotesk";font-size:31px}.stat span{color:var(--muted);font-size:12px}
+    .cta{
+      text-align:center;padding:85px 30px;border:1px solid var(--line);border-radius:36px;
+      background:radial-gradient(circle at 50% 0,rgba(124,92,255,.22),transparent 50%),linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025))
+    }
+    .cta p{color:var(--muted);max-width:570px;margin:0 auto 28px}
+    footer{padding:35px 0 55px;color:#747b98;font-size:12px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:25px}
+    @media(max-width:850px){
+      .links{display:none}.hero{padding-top:125px}.hero-grid,.showcase{grid-template-columns:1fr;gap:50px}
+      .hero-copy{font-size:17px}.feature-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}
+      .stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .phone{width:min(350px,85vw)}
+    }
+    @media(max-width:560px){
+      .container{width:min(100% - 28px,1160px)}.nav-cta{display:none}
+      h1{font-size:51px}.feature-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}
+      .stat{padding:21px 10px}.stat strong{font-size:25px}.footer-inner{flex-direction:column}
+      section{padding:75px 0}.hero{padding-bottom:60px}
+    }
+  </style>
 </head>
 <body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#"><span class="brand-mark">✦</span><span>Sudoku</span></a>
+      <div class="links">
+        <a href="#features">Features</a><a href="#experience">Experience</a><a href="#screens">Screenshots</a>
+      </div>
+      <a class="nav-cta" href="#download">Play Sudoku</a>
+    </div>
+  </nav>
 
-<div class="container">
-    <h1>Privacy Policy</h1>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> A smarter Sudoku experience</span>
+          <h1>Train your mind.<br><span class="gradient-text">Master the grid.</span></h1>
+          <p class="hero-copy">A beautifully crafted Sudoku experience designed to make every puzzle feel satisfying — from your first move to your next personal best.</p>
+          <div class="actions">
+            <a class="primary" href="#download">Start Solving →</a>
+            <a class="secondary" href="#features">Explore features</a>
+          </div>
+          <div class="trust"><span>6×6 &amp; 9×9 puzzles</span><span>•</span><span>Built for focus</span><span>•</span><span>Android</span></div>
+        </div>
+        <div class="phone-wrap">
+          <div class="glow"></div>
+          <div class="phone"><img src="assets/home-screen.png" alt="Sudoku app home screen"></div>
+          <div class="floating"><strong>0 Mistakes</strong><span>Clean. Focused. Satisfying.</span></div>
+        </div>
+      </div>
+    </section>
 
-    <!DOCTYPE html>
+    <section id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Made for better solving</span>
+          <h2>Everything you need to enjoy Sudoku.</h2>
+          <p>Simple enough to pick up instantly. Powerful enough to keep you coming back.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature"><div class="icon">🧠</div><h3>Sharpen your logic</h3><p>Turn every puzzle into a focused mental workout that rewards observation, deduction and patience.</p></article>
+          <article class="feature"><div class="icon">🔥</div><h3>Build your streak</h3><p>Keep solving, keep improving and make every session an opportunity to beat your best.</p></article>
+          <article class="feature"><div class="icon">⚡</div><h3>Fast, fluid gameplay</h3><p>Clean interactions and an uncluttered board keep your attention exactly where it belongs.</p></article>
+          <article class="feature"><div class="icon">💡</div><h3>Helpful hints</h3><p>When you get stuck, intelligent assistance helps you move forward without taking away the challenge.</p></article>
+          <article class="feature"><div class="icon">📊</div><h3>Track your performance</h3><p>See your score, mistakes and solving time so you can understand your progress over time.</p></article>
+          <article class="feature"><div class="icon">🎯</div><h3>Choose your challenge</h3><p>Jump into compact 6×6 puzzles or the classic 9×9 grid whenever you're ready for more.</p></article>
+        </div>
+      </div>
+    </section>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Sudoku App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background: #f7f9fc;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 24px;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 3px 14px rgba(0,0,0,0.08);
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        h2 {
-            margin-top: 28px;
-        }
-        p {
-            margin: 10px 0;
-        }
-        ul {
-            margin: 10px 0 10px 20px;
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #777;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
+    <section id="experience">
+      <div class="container showcase">
+        <div class="showcase-copy">
+          <span class="kicker">The solving experience</span>
+          <h2>Designed around the puzzle, not the clutter.</h2>
+          <p>Every element has a purpose. The board stays prominent, controls stay within reach, and your progress is always easy to understand.</p>
+          <ul class="checklist">
+            <li><span class="check">✓</span>Clear, high-contrast Sudoku grid</li>
+            <li><span class="check">✓</span>Score, mistakes and timer at a glance</li>
+            <li><span class="check">✓</span>Quick-access hints, undo and erase</li>
+            <li><span class="check">✓</span>Comfortable number-entry controls</li>
+          </ul>
+        </div>
+        <div class="screen-card"><img src="assets/sudoku-9x9.png" alt="Sudoku 9x9 gameplay screen"></div>
+      </div>
+    </section>
 
-<p><strong>Effective Date:</strong> April 2026</p>
+    <section id="screens">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Your next session</span>
+          <h2>One puzzle at a time. One level better.</h2>
+          <p>Whether you have five minutes or an hour, open the app and get straight to solving.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>6×6</strong><span>Quick puzzles</span></div>
+          <div class="stat"><strong>9×9</strong><span>Classic Sudoku</span></div>
+          <div class="stat"><strong>∞</strong><span>Ways to improve</span></div>
+          <div class="stat"><strong>100%</strong><span>Focus on the grid</span></div>
+        </div>
+      </div>
+    </section>
 
-<p>
-    Thank you for using our Sudoku app (“the App”). Your privacy is extremely important to us.
-    This Privacy Policy explains in detail how we handle user information, what data (if any)
-    is collected, and your rights as a user.
-</p>
+    <section id="download">
+      <div class="container">
+        <div class="cta">
+          <span class="kicker">Ready?</span>
+          <h2>Your next best score starts here.</h2>
+          <p>Open Sudoku, choose your grid and start solving. Make every move count.</p>
+          <a class="primary" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Start Solving →</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<p>
-    By using the App, you agree to the terms outlined in this Privacy Policy.
-</p>
-
-<h2>1. Overview</h2>
-<p>
-    Our App is designed to provide a simple, distraction-free Sudoku experience.
-    We prioritize user privacy and have intentionally built the App to operate
-    without collecting personal data.
-</p>
-
-<h2>2. Information We Collect</h2>
-<p>
-    We do <strong>not collect, store, transmit, or process any personal or sensitive user data</strong>.
-</p>
-
-<p>This includes, but is not limited to:</p>
-<ul>
-    <li>No names, email addresses, or contact information</li>
-    <li>No location data</li>
-    <li>No device identifiers</li>
-    <li>No usage tracking or analytics</li>
-    <li>No gameplay behavior tracking stored externally</li>
-</ul>
-
-<p>
-    All gameplay (such as puzzle progress, scores, or settings) is stored locally
-    on your device and is never transmitted to any server.
-</p>
-
-<h2>3. Local Data Storage</h2>
-<p>
-    The App may store limited data locally on your device to enhance user experience.
-    This may include:
-</p>
-<ul>
-    <li>Game progress (current puzzle state)</li>
-    <li>User preferences (e.g., difficulty level, settings)</li>
-    <li>Walkthrough/tutorial completion status</li>
-</ul>
-
-<p>
-    This data remains entirely on your device and can be removed by uninstalling the App
-    or clearing the app data through your device settings.
-</p>
-
-<h2>4. Children's Privacy</h2>
-<p>
-    The App is suitable for users of all ages, including children under the age of 13.
-    We comply with applicable child privacy protection laws, including the
-    Children’s Online Privacy Protection Act (COPPA).
-</p>
-
-<p>
-    Since we do not collect any personal information, we do not knowingly collect
-    data from children or any other users.
-</p>
-
-<h2>5. Third-Party Services</h2>
-<p>
-    The App does <strong>not integrate any third-party services</strong> that collect or process user data.
-</p>
-
-<p>This means:</p>
-<ul>
-    <li>No analytics SDKs (e.g., Firebase Analytics)</li>
-    <li>No advertising networks</li>
-    <li>No tracking tools</li>
-    <li>No external APIs that collect personal data</li>
-</ul>
-
-<p>
-    If third-party services are added in future updates, this Privacy Policy will be updated
-    accordingly with full transparency.
-</p>
-
-<h2>6. Data Security</h2>
-<p>
-    Because we do not collect or transmit user data, there is no risk of your personal
-    information being exposed through our systems.
-</p>
-
-<p>
-    Any data stored locally on your device is protected by your device’s own
-    security mechanisms.
-</p>
-
-<h2>7. User Rights</h2>
-<p>
-    Since we do not collect or process personal data, there is no personal data
-    to access, modify, or delete from our servers.
-</p>
-
-<p>
-    However, you retain full control over your local data and may:
-</p>
-<ul>
-    <li>Clear app data through device settings</li>
-    <li>Uninstall the App at any time</li>
-</ul>
-
-<h2>8. Changes to This Privacy Policy</h2>
-<p>
-    We may update this Privacy Policy from time to time to reflect changes in the App,
-    legal requirements, or best practices.
-</p>
-
-<p>
-    When updates are made:
-</p>
-<ul>
-    <li>The “Effective Date” will be revised</li>
-    <li>Changes will be clearly reflected on this page</li>
-</ul>
-
-<p>
-    Continued use of the App after any changes constitutes acceptance of the updated policy.
-</p>
-
-<h2>9. Compliance with Laws</h2>
-<p>
-    This Privacy Policy is designed to comply with applicable privacy laws and regulations,
-    including but not limited to:
-</p>
-<ul>
-    <li>General Data Protection Regulation (GDPR)</li>
-    <li>California Consumer Privacy Act (CCPA)</li>
-    <li>Children’s Online Privacy Protection Act (COPPA)</li>
-</ul>
-
-<p>
-    As no personal data is collected, compliance requirements are minimal.
-</p>
-
-<h2>10. Contact Us</h2>
-<p>
-    If you have any questions, concerns, or feedback regarding this Privacy Policy,
-    you may contact us at:
-</p>
-
-<p><strong>Email:</strong> ajay.ke@gmail.com</p>
-
-<div class="footer">
-    <p>&copy; 2026 Sudoku App. All rights reserved.</p>
-</div>
-
-
-</div>
-
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Sudoku. Crafted for curious minds.</span>
+      <span>6×6 · 9×9 · Logic · Focus · Progress</span>
+    </div>
+  </footer>
 </body>
 </html>
-
